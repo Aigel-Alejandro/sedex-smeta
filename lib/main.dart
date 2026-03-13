@@ -7,11 +7,16 @@ import 'features/auth/presentation/login_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Supabase
-  // Note: Replace these with your actual Supabase project credentials
+  // Initialize Supabase using environment variables for better security
   await Supabase.initialize(
-    url: 'YOUR_SUPABASE_URL',
-    anonKey: 'YOUR_SUPABASE_ANON_KEY',
+    url: const String.fromEnvironment(
+      'SUPABASE_URL',
+      defaultValue: 'https://reqsadelxtulpyjalkom.supabase.co',
+    ),
+    anonKey: const String.fromEnvironment(
+      'SUPABASE_ANON_KEY',
+      defaultValue: 'sb_publishable_O12FfJxL2MciAn-EKN_6DQ_33JTaa63',
+    ),
   );
 
   runApp(
