@@ -46,7 +46,7 @@ final class SedexServiceProvider extends $NotifierProvider<SedexService, void> {
   }
 }
 
-String _$sedexServiceHash() => r'9c0006e1f48c7d2957dd23911c05be1a1d204738';
+String _$sedexServiceHash() => r'e083e12af03702fe4cf32f7f966b09f6fa6c1a2b';
 
 /// [SedexService] is the central point for managing provider invalidations.
 /// Rule of thumb: This file only invalidates providers.

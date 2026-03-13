@@ -12,7 +12,7 @@ class SedexService extends _$SedexService {
 
   /// Invalidates all authentication related data
   void invalidateAuth() {
-    ref.invalidate(authNotifierProvider);
+    ref.invalidate(authProvider);
   }
 
   /// Add more invalidation methods here as the application grows.
