@@ -1,4 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import '../../features/auth/providers/auth_provider.dart';
 
 part 'sedex_service.g.dart';
 
@@ -7,16 +8,16 @@ part 'sedex_service.g.dart';
 @riverpod
 class SedexService extends _$SedexService {
   @override
-  void build() {
-    // Initial state, though we mostly care about the methods
+  void build() => {};
+
+  /// Invalidates all authentication related data
+  void invalidateAuth() {
+    ref.invalidate(authNotifierProvider);
   }
 
-  /// Example of how to invalidate a provider
+  /// Add more invalidation methods here as the application grows.
+  /// GOLDEN RULE: This service ONLY handles provider invalidations.
   void invalidateAll() {
-    // ref.invalidate(someProvider);
-  }
-
-  void refreshAuth() {
-    // ref.invalidate(authProvider);
+    // ref.invalidate(anotherProvider);
   }
 }
