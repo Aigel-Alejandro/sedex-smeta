@@ -115,9 +115,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   // Form
                   AuthTextField(
                     controller: _emailController,
-                    label: 'Email',
-                    icon: Icons.email_outlined,
-                    hint: 'ejemplo@correo.com',
+                    label     : 'Email',
+                    icon      : Icons.email_outlined,
+                    hint      : 'ejemplo@correo.com',
                   ),
                   const SizedBox(height: 16),
                   AuthTextField(
