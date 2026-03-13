@@ -12,7 +12,7 @@ class AppConfig {
   // CakePHP API
   static const String cakeApiUrl = String.fromEnvironment(
     'CAKE_API_URL',
-    defaultValue: 'YOUR_CAKE_PHP_URL',
+    defaultValue: 'https://arzsuite.centrolibanes.org.mx/api/',
   );
   static const String cakeApiKey = String.fromEnvironment(
     'CAKE_API_KEY',

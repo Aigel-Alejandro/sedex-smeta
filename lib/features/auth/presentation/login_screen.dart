@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/auth_provider.dart';
+import '../../../core/api/cake_service.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -148,6 +149,36 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  TextButton(
+                    onPressed: () async {
+                      final cakeService = ref.read(cakeServiceProvider.notifier);
+                      final result = await cakeService.testCakeLogin(
+                        _emailController.text,
+                        _passwordController.text,
+                      );
+                      
+                      if (mounted) {
+                        showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                            title: const Text('Prueba de API CakePHP'),
+                            content: Text('Status: ${result['status']}\nMessage: ${result['message']}\nBody: ${result['body']}'),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.pop(context),
+                                child: const Text('OK'),
+                              ),
+                            ],
+                          ),
+                        );
+                      }
+                    },
+                    child: Text(
+                      'Probar Conexión CakePHP',
+                      style: TextStyle(color: Theme.of(context).colorScheme.secondary),
                     ),
                   ),
                   const SizedBox(height: 16),
